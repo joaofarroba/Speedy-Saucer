@@ -1,3 +1,11 @@
-[gd_scene format=3 uid="uid://de8aibp6tjg1c"]
+[gd_scene load_steps=2 format=3 uid="uid://de8aibp6tjg1c"]
+
+[ext_resource type="Texture2D" uid="uid://b5hv3sw6t3t8q" path="res://assets/speedy_saucer_assets/purple.png" id="1_vapis"]
 
 [node name="Level1" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 649.0
+texture = ExtResource("1_vapis")
+stretch_mode = 1

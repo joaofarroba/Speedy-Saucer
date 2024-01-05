@@ -11,7 +11,11 @@ gravity_scale = 0.0
 script = ExtResource("1_e3ab8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
 texture = ExtResource("1_8q1h4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_e3v8c")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+texture_filter = 1

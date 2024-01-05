@@ -1,17 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://de8aibp6tjg1c"]
+[gd_scene load_steps=5 format=3 uid="uid://de8aibp6tjg1c"]
 
 [ext_resource type="Script" path="res://level_1.gd" id="1_g6lyt"]
 [ext_resource type="Texture2D" uid="uid://b5hv3sw6t3t8q" path="res://assets/speedy_saucer_assets/purple.png" id="1_vapis"]
 [ext_resource type="PackedScene" uid="uid://bhuyfe2bv3buc" path="res://player.tscn" id="2_6ydwd"]
+[ext_resource type="PackedScene" uid="uid://dtfjg57l08650" path="res://map.tscn" id="4_hd7sb"]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_g6lyt")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+z_index = -100
 offset_right = 1152.0
 offset_bottom = 649.0
 texture = ExtResource("1_vapis")
 stretch_mode = 1
 
 [node name="Player" parent="." instance=ExtResource("2_6ydwd")]
+z_index = 10
+texture_filter = 1
+position = Vector2(462, 294)
+
+[node name="Map" parent="." instance=ExtResource("4_hd7sb")]
+z_index = -10
 position = Vector2(462, 294)

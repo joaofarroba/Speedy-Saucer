@@ -24,4 +24,4 @@ position = Vector2(462, 294)
 z_index = -10
 position = Vector2(462, 294)
 
-[connection signal="body_entered" from="Map" to="." method="_on_map_body_entered"]
+[connection signal="area_exited" from="Map" to="." method="_on_map_area_exited"]

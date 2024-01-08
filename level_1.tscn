@@ -1,17 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://de8aibp6tjg1c"]
+[gd_scene load_steps=6 format=3 uid="uid://de8aibp6tjg1c"]
 
 [ext_resource type="Script" path="res://level_1.gd" id="1_g6lyt"]
 [ext_resource type="Texture2D" uid="uid://b5hv3sw6t3t8q" path="res://assets/speedy_saucer_assets/purple.png" id="1_vapis"]
 [ext_resource type="PackedScene" uid="uid://bhuyfe2bv3buc" path="res://player.tscn" id="2_6ydwd"]
 [ext_resource type="PackedScene" uid="uid://dtfjg57l08650" path="res://map.tscn" id="4_hd7sb"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_7kobg"]
+line_spacing = 5.0
+font_size = 50
+
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_g6lyt")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -10
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
 z_index = -100
 offset_right = 1152.0
-offset_bottom = 649.0
+offset_bottom = 666.0
 texture = ExtResource("1_vapis")
 stretch_mode = 1
 
@@ -23,5 +30,23 @@ position = Vector2(462, 294)
 [node name="Map" parent="." instance=ExtResource("4_hd7sb")]
 z_index = -10
 position = Vector2(462, 294)
+
+[node name="Start" type="Label" parent="."]
+z_index = -5
+offset_left = 384.0
+offset_top = 185.0
+offset_right = 532.0
+offset_bottom = 254.0
+text = "START"
+label_settings = SubResource("LabelSettings_7kobg")
+
+[node name="End" type="Label" parent="."]
+z_index = -5
+offset_left = 2065.0
+offset_top = -194.0
+offset_right = 2213.0
+offset_bottom = -125.0
+text = "END"
+label_settings = SubResource("LabelSettings_7kobg")
 
 [connection signal="body_entered" from="Map" to="." method="_on_map_body_entered"]
